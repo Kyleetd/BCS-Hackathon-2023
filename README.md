@@ -1,2 +1,0 @@
-# InnitToWinnit
-BCS Hacks
