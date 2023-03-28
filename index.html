@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <link rel="stylesheet" href="./static/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Lora:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="logo">
-    <img class="emoTrack" src="{{ url_for('static', filename='assets/EmoTrack Logo.png') }}" alt="" />
+    <img class="emoTrack" src="./static/assets/EmoTrackLogo.png"/>
   </div>
   <div class="question">
     <h1 id="response-text">How are you feeling today?</h1>
@@ -23,15 +23,15 @@
       <label form="user_input"></label>
 
       <button id="good-button" onclick="goodButtonFunction(event)" style="height: 200px; width: 200px">
-        <img src="{{ url_for('static', filename='assets/HappyMonkey.png') }}" height="100%" width="100%" />
+        <img src="./static/assets/HappyMonkey.png" height="100%" width="100%" />
       </button>
 
       <button id="neutral-button" onclick="neutralButtonFunction(event)" style="height: 200px; width: 200px">
-        <img src="{{ url_for('static', filename='assets/NeutralMonkey.png') }}" height="100%" width="100%" />
+        <img src="./static/assets/NeutralMonkey.png" height="100%" width="100%" />
       </button>
 
       <button id="bad-button" onclick="badButtonFunction(event)" style="height: 200px; width: 200px">
-        <img src="{{ url_for('static', filename='assets/BadMonkey.png') }}" height="100%" width="100%" />
+        <img src="./static/assets/BadMonkey.png" height="100%" width="100%" />
       </button>
     </form>
   </div>
