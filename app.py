@@ -17,6 +17,7 @@ def create_database():
             curr.execute('''CREATE TABLE emo_track_responses
                     (id INTEGER PRIMARY KEY AUTOINCREMENT, Answer TEXT, Responses TEXT)''')
             conn.commit()
+            print("Created Database!")
         except Exception as error:
             print(error)
         finally:
@@ -27,7 +28,7 @@ def insert(answer, responses):
     try:
         curr.execute("INSERT INTO emo_track_responses (Answer, Responses) VALUES (?, ?)", (answer, responses))
         conn.commit()
-        print("Created Database!")
+        print("Populated Database!")
     except Exception as error:
         print(error)
     finally:
@@ -58,15 +59,16 @@ good_answers = ["You are doing an amazing job! Keep up the great work. z",
 good_str = ', '.join(good_answers)
 
 mid_answers = ["nice z",
-               "alright"]
+               "alright z", 
+               "ok"]
 mid_str = ', '.join(mid_answers)
 
+create_database()
 insert("Bad", bad_str)
 insert("Good", good_str)
 insert("Neutral", mid_str)
 
 def getResponses(UserInput):
-
     conn, curr = connect_to_database(DB_PATH)
     try:
         curr.execute("SELECT Responses FROM emo_track_responses WHERE Answer = ?", (UserInput,))
@@ -81,8 +83,6 @@ def getResponses(UserInput):
         print(error)
     finally:
         conn.close()
-
-getResponses("Good")
 
 ## Create a new instance of the Flask class
 app = Flask(__name__)
